@@ -17,8 +17,8 @@ export function parseDate(s) { if (!s) return null; const [y, m, d] = s.slice(0,
 export function daysBetween(a, b) { return Math.round((parseDate(b) - parseDate(a)) / 86400000); }
 export function dday(target) {
   const n = daysBetween(todayStr(), target);
-  if (n === 0) return 'D-day';
-  return n > 0 ? `D-${n}` : `D+${-n}`;
+  if (n === 0) return '오늘';
+  return n > 0 ? `${n}일 남음` : `${-n}일 지남`;
 }
 const WD = ['일', '월', '화', '수', '목', '금', '토'];
 export function fmtDate(s, { weekday = true, year = false } = {}) {
@@ -32,12 +32,12 @@ export function manwon(n) {
   const v = (Number(n) || 0) / 10000;
   return `${Number.isInteger(v) ? v : v.toFixed(1)}만`;
 }
-export function weekStart(s) { const d = parseDate(s); const day = (d.getDay() + 6) % 7; d.setDate(d.getDate() - day); return d.toLocaleDateString('sv-SE'); }
+export function weekStart(s) { const d = parseDate(s); const day = d.getDay(); d.setDate(d.getDate() - day); return d.toLocaleDateString('sv-SE'); }
 export function addDays(s, n) { const d = parseDate(s); d.setDate(d.getDate() + n); return d.toLocaleDateString('sv-SE'); }
 export function weekLabel(start) {
   const d = parseDate(start);
   const firstOfMonth = new Date(d.getFullYear(), d.getMonth(), 1);
-  const nth = Math.floor((d.getDate() + ((firstOfMonth.getDay() + 6) % 7) - 1) / 7) + 1;
+  const nth = Math.floor((d.getDate() + firstOfMonth.getDay() - 1) / 7) + 1;
   return `${d.getMonth() + 1}월 ${nth}주`;
 }
 export function relTime(iso) {

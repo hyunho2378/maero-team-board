@@ -1,4 +1,4 @@
-// 돈 쓴 것: 마에로 HQ 예산 화면(PageHead, 요약 칸, 표와 목록 셀, 예산 시트)을 지출 입력 칸만 남겨 줄인 화면.
+// 지출: 마에로 HQ 예산 화면(PageHead, 요약 칸, 표와 목록 셀, 예산 시트)을 지출 입력 칸만 남겨 줄인 화면.
 import { useEffect, useState } from 'react';
 import { Plus, Trash2, ExternalLink } from 'lucide-react';
 import PageHead from '../components/PageHead.jsx';
@@ -65,7 +65,7 @@ export default function Budget() {
   const mobile = (b) => ({ title: b.item, meta: <><span>{b.date ? fmtDate(b.date) : '날짜 미정'}</span>{b.shop ? <span>{b.shop}</span> : null}<BudgetStatus status={b.status} /></>, end: <div className="num" style={{ color: 'var(--c-label)' }}>{won(b.amount)}</div> });
   return (
     <div className="page">
-      <PageHead title="돈 쓴 것" sub="활동자금 200만 원 기준">
+      <PageHead title="지출" sub="활동자금 200만 원 기준">
         <Button variant="filled" size="sm" icon={Plus} onClick={() => setSheet({ open: true, item: null })}>지출</Button>
       </PageHead>
       <div className="stats" aria-label="쓴 돈과 남은 돈">

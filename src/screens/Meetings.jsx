@@ -23,8 +23,8 @@ function MeetingEditor({ open, onClose, meeting }) {
         <Field label="날짜"><DatePicker value={d.date} onChange={set('date')} label="날짜 선택" /></Field>
         <Field label="시간"><TextInput value={d.time} onChange={set('time')} placeholder="예: 15:30~16:35" /></Field>
       </div>
-      <Field label="정한 것"><TextArea value={d.decided} onChange={set('decided')} placeholder="무엇을 정했나" /></Field>
-      <Field label="다음 할 일"><TextArea value={d.next} onChange={set('next')} placeholder="누가 언제까지 무엇을" /></Field>
+      <Field label="결정 사항"><TextArea value={d.decided} onChange={set('decided')} placeholder="정한 내용을 적어요" /></Field>
+      <Field label="다음 할 일"><TextArea value={d.next} onChange={set('next')} placeholder="담당자와 기한을 함께 적어요" /></Field>
       <Field label="메모"><TextArea value={d.memo} onChange={set('memo')} placeholder="그 밖의 내용" /></Field>
     </Sheet>
   );
@@ -43,7 +43,7 @@ export function Meetings() {
           columns={[
             { key: 'date', label: '날짜', render: (m) => <span className="nowrap">{fmtDate(m.date)}</span>, width: 120 },
             { key: 'who', label: '누구와', render: (m) => <span className="w-semibold">{m.who}</span> },
-            { key: 'decided', label: '정한 것', render: (m) => <span className="secondary">{m.decided}</span> },
+            { key: 'decided', label: '결정 사항', render: (m) => <span className="secondary">{m.decided}</span> },
           ]}
           mobile={(m) => ({ title: m.who, meta: <><span>{fmtDate(m.date)}</span>{m.time ? <span>{m.time}</span> : null}{m.decided ? <span>{m.decided}</span> : null}</> })} />
       </div>
@@ -75,7 +75,7 @@ export function MeetingDetail() {
         <Button size="sm" variant="danger" icon={Trash2} onClick={del}>지우기</Button>
       </PageHead>
       <div className="split">
-        {block('정한 것', m.decided)}
+        {block('결정 사항', m.decided)}
         {block('다음 할 일', m.next)}
       </div>
       {m.memo ? block('메모', m.memo) : null}

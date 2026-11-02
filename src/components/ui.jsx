@@ -101,7 +101,7 @@ export function DatePicker({ value, onChange, placeholder = '날짜 선택', lab
   useEffect(() => { if (open) { const b = parseDate(value) || parseDate(todayStr()); setView({ y: b.getFullYear(), m: b.getMonth() }); } }, [open, value]);
   const cells = useMemo(() => {
     const first = new Date(view.y, view.m, 1);
-    const start = new Date(first); start.setDate(1 - ((first.getDay() + 6) % 7));
+    const start = new Date(first); start.setDate(1 - first.getDay());
     return Array.from({ length: 42 }, (_, i) => { const d = new Date(start); d.setDate(start.getDate() + i); return d; });
   }, [view]);
   const t = todayStr();
@@ -118,7 +118,7 @@ export function DatePicker({ value, onChange, placeholder = '날짜 선택', lab
             <Button variant="plain" icon={ChevronRight} aria-label="다음 달" onClick={() => setView((v) => (v.m === 11 ? { y: v.y + 1, m: 0 } : { ...v, m: v.m + 1 }))} />
           </div>
           <div className="cal-grid">
-            {['월', '화', '수', '목', '금', '토', '일'].map((w) => <span key={w} className="wd">{w}</span>)}
+            {['일', '월', '화', '수', '목', '금', '토'].map((w) => <span key={w} className="wd">{w}</span>)}
             {cells.map((d) => {
               const s = d.toLocaleDateString('sv-SE');
               return (

@@ -15,7 +15,8 @@ var HEADERS = {
   '일정': ['id', 'title', 'date', 'endDate', 'time', 'owner', 'memo', 'deadline', 'updatedAt'],
   '할일': ['id', 'title', 'owners', 'due', 'done', 'memo', 'updatedAt'],
   '지출': ['id', 'date', 'shop', 'amount', 'item', 'status', 'receipt', 'memo', 'updatedAt'],
-  '미팅': ['id', 'date', 'time', 'who', 'decided', 'next', 'memo', 'updatedAt']
+  '미팅': ['id', 'date', 'time', 'who', 'decided', 'next', 'memo', 'updatedAt'],
+  '상표': ['id', 'letter', 'name', 'status', 'updatedAt']
 };
 
 function doGet() {

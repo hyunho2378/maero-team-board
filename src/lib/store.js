@@ -3,7 +3,7 @@ const ENDPOINT = import.meta.env.VITE_ENDPOINT || '';
 const TEAM_KEY = import.meta.env.VITE_TEAM_KEY || '';
 const PREFIX = 'maero-team-board:';
 
-export const SHEETS = ['일정', '할일', '지출', '미팅'];
+export const SHEETS = ['일정', '할일', '지출', '미팅', '상표'];
 export const MODE = ENDPOINT ? 'remote' : 'local';
 
 export function uuid() {
@@ -57,17 +57,26 @@ function writeLocal(sheet, rows) {
   localStorage.setItem(PREFIX + sheet, JSON.stringify(rows));
 }
 
+// 원격 스크립트가 아직 새 시트(상표)를 모르면 그 시트만 이 기기에 둔다.
+const localOnly = new Set();
+const useRemote = (sheet) => MODE === 'remote' && !localOnly.has(sheet);
+async function tryRemote(sheet, body) {
+  try { return await post({ ...body, sheet }); } catch (e) {
+    if (e.message === 'sheet') { localOnly.add(sheet); return null; }
+    throw e;
+  }
+}
+
 export async function list(sheet) {
-  const rows = MODE === 'remote' ? (await post({ action: 'list', sheet })).rows : readLocal(sheet);
+  const json = useRemote(sheet) ? await tryRemote(sheet, { action: 'list' }) : null;
+  const rows = json ? json.rows : readLocal(sheet);
   return rows.map((r) => normalize(sheet, r));
 }
 
 export async function upsert(sheet, row) {
   const data = serialize({ ...row, id: row.id || uuid(), updatedAt: new Date().toISOString() });
-  if (MODE === 'remote') {
-    const json = await post({ action: 'upsert', sheet, row: data });
-    return normalize(sheet, json.row);
-  }
+  const json = useRemote(sheet) ? await tryRemote(sheet, { action: 'upsert', row: data }) : null;
+  if (json) return normalize(sheet, json.row);
   const rows = readLocal(sheet);
   const i = rows.findIndex((r) => r.id === data.id);
   if (i === -1) rows.push(data);
@@ -77,10 +86,8 @@ export async function upsert(sheet, row) {
 }
 
 export async function remove(sheet, id) {
-  if (MODE === 'remote') {
-    await post({ action: 'remove', sheet, row: { id } });
-    return true;
-  }
+  const json = useRemote(sheet) ? await tryRemote(sheet, { action: 'remove', row: { id } }) : null;
+  if (json) return true;
   writeLocal(sheet, readLocal(sheet).filter((r) => r.id !== id));
   return true;
 }

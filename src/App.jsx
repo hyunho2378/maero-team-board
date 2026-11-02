@@ -1,18 +1,20 @@
 import { Navigate, NavLink, Route, Routes, useLocation } from 'react-router-dom';
-import { CalendarRange, KanbanSquare, Wallet, Users } from 'lucide-react';
+import { CalendarRange, KanbanSquare, Wallet, Users, Stamp } from 'lucide-react';
 import { ToastProvider } from './components/ui.jsx';
 import Island from './components/Island.jsx';
 import Schedule from './screens/Schedule.jsx';
 import Board from './screens/Board.jsx';
 import Budget from './screens/Budget.jsx';
 import { Meetings, MeetingDetail } from './screens/Meetings.jsx';
-import { useBoot, MODE } from './lib/collection.js';
+import Trademark from './screens/Trademark.jsx';
+import { useBoot } from './lib/collection.js';
 
 const NAV = [
   { to: '/calendar', label: '캘린더', icon: CalendarRange },
   { to: '/todo', label: '해야 할 일', icon: KanbanSquare },
-  { to: '/money', label: '돈 쓴 것', icon: Wallet },
+  { to: '/money', label: '지출', icon: Wallet },
   { to: '/meetings', label: '미팅 기록', icon: Users },
+  { to: '/trademark', label: '상표', icon: Stamp },
 ];
 
 function Shell({ children }) {
@@ -25,8 +27,6 @@ function Shell({ children }) {
         {NAV.map((n) => (
           <NavLink key={n.to} to={n.to} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}><n.icon size={20} aria-hidden="true" />{n.label}</NavLink>
         ))}
-        <div className="spacer" />
-        <p className="t-caption secondary" style={{ padding: '0 12px' }}>{MODE === 'remote' ? '팀 시트에 저장' : '이 브라우저에만 저장'}</p>
       </aside>
       <Island />
       <main className="main" id="main" aria-busy={!ready}>
@@ -53,6 +53,7 @@ export default function App() {
           <Route path="/money" element={<Budget />} />
           <Route path="/meetings" element={<Meetings />} />
           <Route path="/meetings/:id" element={<MeetingDetail />} />
+          <Route path="/trademark" element={<Trademark />} />
           <Route path="*" element={<Navigate to="/calendar" replace />} />
         </Routes>
       </Shell>
