@@ -1,55 +1,420 @@
 {
   "일정": [
-    {"id":"seed-e01","title":"승인 서류 제출 마감","date":"2026-11-03","endDate":"","time":"","owner":"함께","memo":"매니저 부재 11월 4일부터 6일까지","deadline":"1"},
-    {"id":"seed-e02","title":"증빙 제출","date":"2026-11-05","endDate":"","time":"17:00","owner":"함께","memo":"","deadline":"1"},
-    {"id":"seed-e03","title":"도서 수령 예정","date":"2026-11-05","endDate":"","time":"","owner":"함께","memo":"","deadline":""},
-    {"id":"seed-e04","title":"회계법인 증빙 교육 줌","date":"2026-11-06","endDate":"","time":"16:00","owner":"함께","memo":"","deadline":""},
-    {"id":"seed-e05","title":"성수 캐릭터 굿즈 팝업 벤치마크","date":"2026-11-08","endDate":"","time":"","owner":"함께","memo":"","deadline":""},
-    {"id":"seed-e06","title":"춘천 오프라인 사업계획서 교육","date":"2026-11-10","endDate":"","time":"10:00","owner":"함께","memo":"10시부터 15시까지, 필수 참석","deadline":""},
-    {"id":"seed-e07","title":"키링 출고 예정","date":"2026-11-10","endDate":"","time":"","owner":"함께","memo":"","deadline":""},
-    {"id":"seed-e08","title":"교내 관찰과 FGI","date":"2026-11-12","endDate":"","time":"","owner":"함께","memo":"","deadline":""},
-    {"id":"seed-e09","title":"증빙 제출","date":"2026-11-12","endDate":"","time":"17:00","owner":"함께","memo":"","deadline":"1"},
-    {"id":"seed-e10","title":"KDM+ 설문","date":"2026-11-14","endDate":"2026-11-15","time":"","owner":"함께","memo":"","deadline":""},
-    {"id":"seed-e11","title":"전공박람회 설문","date":"2026-11-18","endDate":"","time":"","owner":"함께","memo":"","deadline":""},
-    {"id":"seed-e12","title":"증빙 제출","date":"2026-11-19","endDate":"","time":"17:00","owner":"함께","memo":"","deadline":"1"},
-    {"id":"seed-e13","title":"대표 일본 부재","date":"2026-11-19","endDate":"2026-11-25","time":"","owner":"주현호","memo":"","deadline":""},
-    {"id":"seed-e14","title":"1R 사업계획서 및 활동보고서 제출 마감","date":"2026-11-23","endDate":"","time":"14:00","owner":"함께","memo":"연장 불가","deadline":"1"},
-    {"id":"seed-e15","title":"활동자금 사용 마감","date":"2026-11-30","endDate":"","time":"","owner":"함께","memo":"","deadline":"1"},
-    {"id":"seed-e16","title":"최종 증빙 마감","date":"2026-12-04","endDate":"","time":"","owner":"함께","memo":"","deadline":"1"}
+    {
+      "id": "seed-e01",
+      "title": "승인 서류 제출 마감",
+      "date": "2026-11-03",
+      "endDate": "",
+      "time": "",
+      "owner": "함께",
+      "memo": "매니저 부재 11월 4일부터 6일까지",
+      "deadline": "1"
+    },
+    {
+      "id": "seed-e02",
+      "title": "증빙 제출",
+      "date": "2026-11-05",
+      "endDate": "",
+      "time": "17:00",
+      "owner": "함께",
+      "memo": "",
+      "deadline": "1"
+    },
+    {
+      "id": "seed-e03",
+      "title": "도서 수령 예정",
+      "date": "2026-11-05",
+      "endDate": "",
+      "time": "",
+      "owner": "함께",
+      "memo": "",
+      "deadline": ""
+    },
+    {
+      "id": "seed-e04",
+      "title": "회계법인 증빙 교육 줌",
+      "date": "2026-11-06",
+      "endDate": "",
+      "time": "16:00",
+      "owner": "함께",
+      "memo": "",
+      "deadline": ""
+    },
+    {
+      "id": "seed-e05",
+      "title": "성수 캐릭터 굿즈 팝업 벤치마크",
+      "date": "2026-11-08",
+      "endDate": "",
+      "time": "",
+      "owner": "함께",
+      "memo": "",
+      "deadline": ""
+    },
+    {
+      "id": "seed-e06",
+      "title": "춘천 오프라인 사업계획서 교육",
+      "date": "2026-11-10",
+      "endDate": "",
+      "time": "10:00",
+      "owner": "함께",
+      "memo": "10시부터 15시까지, 필수 참석",
+      "deadline": ""
+    },
+    {
+      "id": "seed-e07",
+      "title": "키링 출고 예정",
+      "date": "2026-11-10",
+      "endDate": "",
+      "time": "",
+      "owner": "함께",
+      "memo": "",
+      "deadline": ""
+    },
+    {
+      "id": "seed-e08",
+      "title": "교내 관찰과 FGI",
+      "date": "2026-11-12",
+      "endDate": "",
+      "time": "",
+      "owner": "함께",
+      "memo": "",
+      "deadline": ""
+    },
+    {
+      "id": "seed-e09",
+      "title": "증빙 제출",
+      "date": "2026-11-12",
+      "endDate": "",
+      "time": "17:00",
+      "owner": "함께",
+      "memo": "",
+      "deadline": "1"
+    },
+    {
+      "id": "seed-e10",
+      "title": "KDM+ 설문",
+      "date": "2026-11-14",
+      "endDate": "2026-11-15",
+      "time": "",
+      "owner": "함께",
+      "memo": "",
+      "deadline": ""
+    },
+    {
+      "id": "seed-e11",
+      "title": "전공박람회 설문",
+      "date": "2026-11-18",
+      "endDate": "",
+      "time": "",
+      "owner": "함께",
+      "memo": "",
+      "deadline": ""
+    },
+    {
+      "id": "seed-e12",
+      "title": "증빙 제출",
+      "date": "2026-11-19",
+      "endDate": "",
+      "time": "17:00",
+      "owner": "함께",
+      "memo": "",
+      "deadline": "1"
+    },
+    {
+      "id": "seed-e13",
+      "title": "대표 일본 부재",
+      "date": "2026-11-19",
+      "endDate": "2026-11-25",
+      "time": "",
+      "owner": "주현호",
+      "memo": "",
+      "deadline": ""
+    },
+    {
+      "id": "seed-e14",
+      "title": "1R 사업계획서 및 활동보고서 제출 마감",
+      "date": "2026-11-23",
+      "endDate": "",
+      "time": "14:00",
+      "owner": "함께",
+      "memo": "연장 불가",
+      "deadline": "1"
+    },
+    {
+      "id": "seed-e15",
+      "title": "활동자금 사용 마감",
+      "date": "2026-11-30",
+      "endDate": "",
+      "time": "",
+      "owner": "함께",
+      "memo": "",
+      "deadline": "1"
+    },
+    {
+      "id": "seed-e16",
+      "title": "최종 증빙 마감",
+      "date": "2026-12-04",
+      "endDate": "",
+      "time": "",
+      "owner": "함께",
+      "memo": "",
+      "deadline": "1"
+    }
   ],
   "할일": [
-    {"id":"seed-t01","title":"상표 출원서 3장 작성","owners":"주현호","due":"2026-11-03","done":"","memo":"마에로 14류와 16류, 마에로와 삐삐로 16류, 삐삐로 16류와 35류"},
-    {"id":"seed-t02","title":"사무국 후속 메일 보내기","owners":"주현호","due":"2026-11-03","done":"","memo":"승인 후"},
-    {"id":"seed-t03","title":"애드피아몰 배너 계약서 받기","owners":"주현호","due":"2026-11-05","done":"","memo":""},
-    {"id":"seed-t04","title":"11월 5일 증빙 3종 정리","owners":"주현호","due":"2026-11-05","done":"","memo":""},
-    {"id":"seed-t05","title":"설문 문항 확정","owners":"주현호,허주은","due":"2026-11-06","done":"","memo":""},
-    {"id":"seed-t06","title":"기본 마에로 설계 근거 시트","owners":"주현호","due":"2026-11-07","done":"","memo":""},
-    {"id":"seed-t07","title":"타 축제 조사 보강","owners":"허주은","due":"2026-11-10","done":"","memo":""},
-    {"id":"seed-t08","title":"교내 FGI 준비","owners":"허주은","due":"2026-11-11","done":"","memo":""},
-    {"id":"seed-t09","title":"사업계획서 10쪽 맞추기","owners":"주현호","due":"2026-11-17","done":"","memo":""},
-    {"id":"seed-t10","title":"키링 시안 정리","owners":"윤현아","due":"","done":"","memo":""}
+    {
+      "id": "seed-t01",
+      "title": "상표 출원서 5장 작성",
+      "owners": "주현호",
+      "due": "2026-11-03",
+      "done": "",
+      "memo": "가 마에로 14류, 나 마에로 16류, 다 마에로와 삐삐로 16류, 라 삐삐로 16류, 마 삐삐로 35류"
+    },
+    {
+      "id": "seed-t02",
+      "title": "사무국 후속 메일 보내기",
+      "owners": "주현호",
+      "due": "2026-11-03",
+      "done": "",
+      "memo": "승인 후"
+    },
+    {
+      "id": "seed-t03",
+      "title": "애드피아몰 배너 계약서 받기",
+      "owners": "주현호",
+      "due": "2026-11-05",
+      "done": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-t04",
+      "title": "11월 5일 증빙 3종 정리",
+      "owners": "주현호",
+      "due": "2026-11-05",
+      "done": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-t05",
+      "title": "설문 문항 확정",
+      "owners": "주현호,허주은",
+      "due": "2026-11-06",
+      "done": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-t06",
+      "title": "기본 마에로 설계 근거 시트",
+      "owners": "주현호",
+      "due": "2026-11-07",
+      "done": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-t07",
+      "title": "타 축제 조사 보강",
+      "owners": "허주은",
+      "due": "2026-11-10",
+      "done": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-t08",
+      "title": "교내 FGI 준비",
+      "owners": "허주은",
+      "due": "2026-11-11",
+      "done": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-t09",
+      "title": "사업계획서 10쪽 맞추기",
+      "owners": "주현호",
+      "due": "2026-11-17",
+      "done": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-t10",
+      "title": "키링 시안 정리",
+      "owners": "윤현아",
+      "due": "",
+      "done": "",
+      "memo": ""
+    }
   ],
   "지출": [
-    {"id":"seed-m01","date":"2026-10-31","shop":"예스24","amount":"75250","item":"도서 4권","status":"결제 완료","receipt":"","memo":"결제 77,500원 중 청구분"},
-    {"id":"seed-m02","date":"2026-11-02","shop":"한국저작권위원회","amount":"94400","item":"저작권 등록 4건","status":"결제 완료","receipt":"","memo":""},
-    {"id":"seed-m03","date":"2026-11-02","shop":"레드프린팅","amount":"48950","item":"자유형 키링 10개","status":"결제 완료","receipt":"","memo":"배송비 3,500원은 본인 부담이라 제외"},
-    {"id":"seed-m04","date":"2026-11-02","shop":"레드프린팅","amount":"257400","item":"원형 키링 60개","status":"결제 완료","receipt":"","memo":""},
-    {"id":"seed-m05","date":"","shop":"","amount":"116600","item":"타투 스티커 2종","status":"승인","receipt":"","memo":"승인, 결제 전"},
-    {"id":"seed-m06","date":"","shop":"","amount":"17200","item":"성수 여비","status":"승인","receipt":"","memo":"승인, 결제 전"},
-    {"id":"seed-m07","date":"","shop":"","amount":"74800","item":"엽서와 원형 스티커","status":"승인 전","receipt":"","memo":"재료구입비로 변경 재신청 중"},
-    {"id":"seed-m08","date":"","shop":"애드피아몰","amount":"27170","item":"배너와 A1 패널","status":"승인 전","receipt":"","memo":"업체 계약서 필요"},
-    {"id":"seed-m09","date":"","shop":"","amount":"230000","item":"상표 출원 5류","status":"승인 전","receipt":"","memo":""},
-    {"id":"seed-m10","date":"","shop":"당근","amount":"80000","item":"광고","status":"승인 전","receipt":"","memo":""},
-    {"id":"seed-m11","date":"","shop":"네이버","amount":"100000","item":"광고","status":"승인 전","receipt":"","memo":""},
-    {"id":"seed-m12","date":"","shop":"메타","amount":"120000","item":"광고","status":"승인 전","receipt":"","memo":""}
+    {
+      "id": "seed-m01",
+      "date": "2026-10-31",
+      "shop": "예스24",
+      "amount": "75250",
+      "item": "도서 4권",
+      "status": "결제 완료",
+      "receipt": "",
+      "memo": "결제 77,500원 중 청구분"
+    },
+    {
+      "id": "seed-m02",
+      "date": "2026-11-02",
+      "shop": "한국저작권위원회",
+      "amount": "94400",
+      "item": "저작권 등록 4건",
+      "status": "결제 완료",
+      "receipt": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-m03",
+      "date": "2026-11-02",
+      "shop": "레드프린팅",
+      "amount": "48950",
+      "item": "자유형 키링 10개",
+      "status": "결제 완료",
+      "receipt": "",
+      "memo": "배송비 3,500원은 본인 부담이라 제외"
+    },
+    {
+      "id": "seed-m04",
+      "date": "2026-11-02",
+      "shop": "레드프린팅",
+      "amount": "257400",
+      "item": "원형 키링 60개",
+      "status": "결제 완료",
+      "receipt": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-m05",
+      "date": "",
+      "shop": "",
+      "amount": "116600",
+      "item": "타투 스티커 2종",
+      "status": "승인",
+      "receipt": "",
+      "memo": "승인, 결제 전"
+    },
+    {
+      "id": "seed-m06",
+      "date": "",
+      "shop": "",
+      "amount": "17200",
+      "item": "성수 여비",
+      "status": "승인",
+      "receipt": "",
+      "memo": "승인, 결제 전"
+    },
+    {
+      "id": "seed-m07",
+      "date": "",
+      "shop": "",
+      "amount": "74800",
+      "item": "엽서와 원형 스티커",
+      "status": "승인 전",
+      "receipt": "",
+      "memo": "재료구입비로 변경 재신청 중"
+    },
+    {
+      "id": "seed-m08",
+      "date": "",
+      "shop": "애드피아몰",
+      "amount": "27170",
+      "item": "배너와 A1 패널",
+      "status": "승인 전",
+      "receipt": "",
+      "memo": "업체 계약서 필요"
+    },
+    {
+      "id": "seed-m09",
+      "date": "",
+      "shop": "",
+      "amount": "230000",
+      "item": "상표 출원 5류",
+      "status": "승인 전",
+      "receipt": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-m10",
+      "date": "",
+      "shop": "당근",
+      "amount": "80000",
+      "item": "광고",
+      "status": "승인 전",
+      "receipt": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-m11",
+      "date": "",
+      "shop": "네이버",
+      "amount": "100000",
+      "item": "광고",
+      "status": "승인 전",
+      "receipt": "",
+      "memo": ""
+    },
+    {
+      "id": "seed-m12",
+      "date": "",
+      "shop": "메타",
+      "amount": "120000",
+      "item": "광고",
+      "status": "승인 전",
+      "receipt": "",
+      "memo": ""
+    }
   ],
   "미팅": [
-    {"id":"seed-g01","date":"2026-10-30","time":"16:08~16:39","who":"사무국 최대원 기획팀장","decided":"협약서와 CI 요청","next":"","memo":"협의 미팅"},
-    {"id":"seed-g02","date":"2026-11-02","time":"15:30~16:35","who":"유디임팩트 유연성 파트너","decided":"요구 사항: 설계 근거, 차별점, 사이트로 연결, 굿즈 기여 검증, 2027 실증, 강원 다른 축제 문제 연결, 확장","next":"","memo":"멘토링"}
+    {
+      "id": "seed-g01",
+      "date": "2026-10-30",
+      "time": "16:08~16:39",
+      "who": "사무국 최대원 기획팀장",
+      "decided": "협약서와 CI 요청",
+      "next": "",
+      "memo": "협의 미팅"
+    },
+    {
+      "id": "seed-g02",
+      "date": "2026-11-02",
+      "time": "15:30~16:35",
+      "who": "유디임팩트 유연성 파트너",
+      "decided": "요구 사항: 설계 근거, 차별점, 사이트로 연결, 굿즈 기여 검증, 2027 실증, 강원 다른 축제 문제 연결, 확장",
+      "next": "",
+      "memo": "멘토링"
+    }
   ],
   "상표": [
-    {"id":"tm-ga","letter":"가","name":"마에로","status":"작성 전"},
-    {"id":"tm-na","letter":"나","name":"마에로와 삐삐로","status":"작성 전"},
-    {"id":"tm-da","letter":"다","name":"삐삐로","status":"작성 전"}
+    {
+      "id": "tm-1",
+      "letter": "가",
+      "name": "마에로",
+      "status": "작성 전"
+    },
+    {
+      "id": "tm-2",
+      "letter": "나",
+      "name": "마에로",
+      "status": "작성 전"
+    },
+    {
+      "id": "tm-3",
+      "letter": "다",
+      "name": "마에로와 삐삐로",
+      "status": "작성 전"
+    },
+    {
+      "id": "tm-4",
+      "letter": "라",
+      "name": "삐삐로",
+      "status": "작성 전"
+    },
+    {
+      "id": "tm-5",
+      "letter": "마",
+      "name": "삐삐로",
+      "status": "작성 전"
+    }
   ]
 }

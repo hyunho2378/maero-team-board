@@ -1,4 +1,4 @@
-// 상표: 출원서 3장을 표 하나로 보여 주고 상태만 바꾸는 화면. 상태는 store 의 "상표" 시트에 저장한다.
+// 상표: 출원서 5장을 표 하나로 보여 주고 상태만 바꾸는 화면. 상태는 store 의 "상표" 시트에 저장한다.
 import { useState } from 'react';
 import { ChevronDown, Check } from 'lucide-react';
 import PageHead from '../components/PageHead.jsx';
@@ -7,13 +7,15 @@ import { useSheet, saveRow } from '../lib/collection.js';
 import { won } from '../lib/format.js';
 
 const STATUS = ['작성 전', '작성 완료', '승인 대기', '제출', '완료'];
-const KG = { cls: '제16류', goods: '스티커, 엽서', group: 'G2202, G520102' };
+const GOODS16 = { cls: '제16류', goods: '스티커, 엽서', group: 'G2202, G520102' };
 const FORMS = [
-  { id: 'tm-ga', letter: '가', name: '마에로', sample: '상표견본_01_마에로', fee: 92000,
-    lines: [{ cls: '제14류', goods: '열쇠고리(장신구 또는 장식용줄이 달린 분할 링)', group: 'G3002' }, KG] },
-  { id: 'tm-na', letter: '나', name: '마에로와 삐삐로', sample: '상표견본_02_마에로와삐삐로', fee: 46000, lines: [KG] },
-  { id: 'tm-da', letter: '다', name: '삐삐로', sample: '상표견본_03_삐삐로', fee: 92000,
-    lines: [KG, { cls: '제35류', goods: '광고업', group: 'S0101' }] },
+  { id: 'tm-1', letter: '가', name: '마에로', sample: '상표견본_01_마에로', fee: 46000,
+    lines: [{ cls: '제14류', goods: '열쇠고리(장신구 또는 장식용줄이 달린 분할 링)', group: 'G3002' }] },
+  { id: 'tm-2', letter: '나', name: '마에로', sample: '상표견본_01_마에로', fee: 46000, lines: [GOODS16] },
+  { id: 'tm-3', letter: '다', name: '마에로와 삐삐로', sample: '상표견본_02_마에로와삐삐로', fee: 46000, lines: [GOODS16] },
+  { id: 'tm-4', letter: '라', name: '삐삐로', sample: '상표견본_03_삐삐로', fee: 46000, lines: [GOODS16] },
+  { id: 'tm-5', letter: '마', name: '삐삐로', sample: '상표견본_03_삐삐로', fee: 46000,
+    lines: [{ cls: '제35류', goods: '광고업', group: 'S0101' }] },
 ];
 const SAME = [
   ['출원구분', '상표등록출원'], ['권리구분', '상표'], ['출원인', '주현호'], ['등록대상 입력방법', '고시 명칭만 입력'],
@@ -52,7 +54,7 @@ export default function Trademark() {
       <PageHead title="상표" sub="상표등록출원 준비" />
 
       <p className="tm-top">
-        <span className="t-headline num">출원서 3장, {CLASS_COUNT}개 류, 수수료 합계 {won(TOTAL)}</span>
+        <span className="t-headline num">출원서 {FORMS.length}장, {CLASS_COUNT}개 류, 수수료 합계 {won(TOTAL)}</span>
         <span className="t-subhead secondary">매니저 승인 전이라 서면출력 PDF까지만 준비해요</span>
       </p>
 
@@ -113,7 +115,7 @@ export default function Trademark() {
       </section>
 
       <section className="tm-block" aria-labelledby="tm-same">
-        <h2 id="tm-same" className="t-headline">세 장 모두 같은 칸</h2>
+        <h2 id="tm-same" className="t-headline">다섯 장 모두 같은 칸</h2>
         <div className="surface tm-wrap">
           <table className="tbl tm-tbl tm-same">
             <colgroup><col className="c-key" /><col /></colgroup>
