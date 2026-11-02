@@ -6,9 +6,8 @@ import { applyTokens } from './tokens.js';
 import { boot } from './lib/collection.js';
 import './styles.css';
 
-const mq = window.matchMedia('(prefers-color-scheme: dark)');
-applyTokens(mq.matches ? 'dark' : 'light');
-mq.addEventListener?.('change', (e) => applyTokens(e.matches ? 'dark' : 'light'));
+// 팀 보드는 검정 배경을 쓰지 않으므로 항상 밝은 화면으로 고정한다.
+applyTokens('light');
 boot();
 
 createRoot(document.getElementById('root')).render(
